@@ -582,11 +582,16 @@
                   <textarea placeholder="Message" rows="8" class="form-control form-control-lg shadow"></textarea>
                 </div>
                 <div class="text-center d-grid mt-1">
-                  <button type="submit" class="btn btn-primary rounded-pill pt-3 pb-3">
+                  <button type="submit" class="btn btn-primary rounded-pill pt-3 pb-3" onclick="openPopup()">
                     Submit
                     <i class="fas fa-paper-plane"></i>  
                   </button>
                 </div>
+		<div class="popup" id="popup">
+                  <h2>Thank You!</h2>
+                  <p>Your detail has been successfully submitted. Thanks!</p>
+                  <button type="button" class="btn btn-primary rounded-pill" onclick="closePopup()">ok</button>
+                </div>      
               </form>
             </div>
           </div>
@@ -698,7 +703,15 @@
 
     
 
-
+     <script>
+      let popup = document.getElementById("popup");
+      function openPopup(){
+        popup.classList.add("open-popup");
+      }
+      function closePopup(){
+        popup.classList.remove("open-popup");
+      }
+    </script>	
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendors/js/glightbox.min.js"></script>
     <script>
